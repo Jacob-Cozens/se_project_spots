@@ -41,6 +41,11 @@
   background-color: transparent;
 }
 
+.profile__pencil {
+  position: relative;
+  left: -8px;
+}
+
 .profile__add-btn {
   margin-top: auto;
   margin-left: auto;
