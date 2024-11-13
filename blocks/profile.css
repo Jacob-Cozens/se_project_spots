@@ -21,6 +21,13 @@
   font-weight: 500;
   font-size: 32px;
   line-height: 1;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  line-clamp: 3;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  max-width: 420px;
 }
 
 .profile__description {
@@ -29,10 +36,17 @@
   font-size: 16px;
   line-height: 1;
   opacity: 70%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  line-clamp: 3;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  max-width: 420px;
 }
 
 .profile__edit-btn {
-  margin: auto auto 102px 0;
+  margin: 12px auto auto 0;
   font-weight: 500;
   font-size: 16px;
   line-height: 1;
@@ -97,9 +111,11 @@
 
   .profile__description {
     margin-bottom: 32px;
+    max-width: 288px;
   }
 
   .profile__column {
     margin-bottom: 20px;
+    max-width: 288px;
   }
 }
