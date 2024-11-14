@@ -31,6 +31,6 @@ This Project is called "Spots". In this project, I've created the layout of a mo
 
 **Deployment**
 
-[Link to Project](https://jacob-cozens.github.io/se_project_spots/) 
+[Link to Project](https://jacob-cozens.github.io/se_project_spots/)
 
 [Link to Video](https://drive.google.com/file/d/1qRTy4-twScCvlM43ooH-ua0WPcFcu6sb/view?usp=sharing)
