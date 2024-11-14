@@ -14,17 +14,17 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin: 12px 0px 36px;
 }
 
 .card__like-btn {
+  margin: 0;
   background-image: url(../images/like-icon.svg);
   background-color: transparent;
   opacity: 40%;
   width: 23px;
   height: 20px;
   border: none;
-  position: relative;
-  top: -12px;
   transition: opacity 1s ease;
 }
 
@@ -34,7 +34,7 @@
 }
 
 .card__title {
-  margin: 12px 0 36px;
+  margin: 0;
   max-width: 353px;
   font-weight: 500;
   font-size: 20px;
