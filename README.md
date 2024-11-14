@@ -1,10 +1,9 @@
 # Project 3: Spots
 
-### Overview  
+### Overview
 
-  This Project is called "Spots". In this project, I've created the layout of a mock social media website where people can create profiles, share pictures, and like one another's photos. This website is especially made for both desktop and mobile screen sizes.  
+This Project is called "Spots". In this project, I've created the layout of a mock social media website where people can create profiles, share pictures, and like one another's photos. This website is especially made for both desktop and mobile screen sizes.
 
-  
 **Project Features**
 
 - Semantic HTML5
@@ -14,14 +13,24 @@
 - Grid
 - Responsive Design
 
-  Using a combination of Grid and Flexbox, I was able to easily set up the website in a way that uses responsive design, ensuring that the website renders well on all screen sizes and resolutions. 
+  Using a combination of Grid and Flexbox, I was able to easily set up the website in a way that uses responsive design, ensuring that the website renders well on all screen sizes and resolutions.
 
-
-**Images**  
+**Images**
 
 ![alt text](images/respnsivedesign.png)
+
 (Responsive Design makes viewing easy on mobile devices)
-![alt text](images/gridbox.png) 
+
+![alt text](images/gridbox.png)
+
 (Using Grid simplifies the process of creating space between photos)
-![alt text](images/txtoverflow.png) 
+
+![alt text](images/txtoverflow.png)
+
 (Text Overflow is handled)
+
+**Deployment**
+
+[Link to Project](https://jacob-cozens.github.io/se_project_spots/) 
+
+[Link to Video](https://drive.google.com/file/d/1qRTy4-twScCvlM43ooH-ua0WPcFcu6sb/view?usp=sharing)
