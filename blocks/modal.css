@@ -52,11 +52,8 @@
   line-height: 1;
   font-weight: 500;
   border: 1px solid rgb(33, 33, 33, 0.4);
-}
-
-.modal__input::placeholder {
   color: #212121;
-  opacity: 1;
+  opacity: 30%;
 }
 
 .modal__cls-btn {
@@ -80,4 +77,36 @@
   background-color: #212121;
   border-radius: 8px;
   color: #fcf5e5;
+}
+
+@media screen and (max-width: 627px) {
+  .modal__container {
+    width: 300px;
+    padding: 12px;
+  }
+
+  .modal__title {
+    font-size: 20px;
+    line-height: 1;
+    margin: 0 0 24px;
+    padding: 10px 0 10px 0;
+  }
+
+  .modal__label {
+    width: 100%;
+    margin: 0 0 24px;
+  }
+
+  .modal__input {
+    font-size: 16px;
+  }
+
+  .modal__sub-btn {
+    width: 100%;
+  }
+
+  .modal__cls-btn {
+    top: 12px;
+    right: 12px;
+  }
 }
