@@ -6,6 +6,10 @@
     <meta name="author" content="Jacob Cozens" />
     <meta name="description" content="Social Media Website" />
     <meta name="keywords" content="HTML, CSS, Social, Pictures" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self' 'unsafe-inline';"
+    />
     <link rel="stylesheet" href="pages/index.css" />
     <link rel="shortcut icon" href="favicon.ico" />
     <title>Spots</title>
@@ -27,15 +31,8 @@
             class="profile__avatar"
           />
           <div class="profile__column">
-            <h1 class="profile__name">
-              Aliaune Damala Bouga Time Bongo Puru Nacka Lu Lu Lu Badara Akon
-              The Third
-            </h1>
-            <p class="profile__description">
-              Known mononymously as Akon (/ˈeɪkɒn/), is a Senegalese-American
-              singer, record producer, and entrepreneur. An influential figure
-              in modern world for sure
-            </p>
+            <h1 class="profile__name">Bessie Coleman</h1>
+            <p class="profile__description">Civial Aviator</p>
             <button type="button" class="profile__edit-btn">
               <img
                 src="./images/pencil-icon.svg"
@@ -54,74 +51,15 @@
         </section>
         <section class="page__section cards">
           <ul class="cards__list">
-            <li class="card">
-              <img
-                src="./images/1-photo-by-moritz-feldmann-from-pexels.jpg"
-                alt="Val Thorens"
-                class="card__img"
-              />
-              <div class="card__content">
-                <h2 class="card__title">Val Thorens</h2>
-                <button type="button" class="card__like-btn"></button>
-              </div>
-            </li>
-            <li class="card">
-              <img
-                src="./images/2-photo-by-ceiline-from-pexels.jpg"
-                alt="Restaurant terrace"
-                class="card__img"
-              />
-              <div class="card__content">
-                <h2 class="card__title">Restaurant terrace</h2>
-                <button type="button" class="card__like-btn"></button>
-              </div>
-            </li>
-            <li class="card">
-              <img
-                src="./images/3-photo-by-tubanur-dogan-from-pexels.jpg"
-                alt="An outdoor cafe"
-                class="card__img"
-              />
-              <div class="card__content">
-                <h2 class="card__title">An outdoor cafe</h2>
-                <button type="button" class="card__like-btn"></button>
-              </div>
-            </li>
-            <li class="card">
-              <img
-                src="./images/4-photo-by-maurice-laschet-from-pexels.jpg"
-                alt="Bridge over forest"
-                class="card__img"
-              />
-              <div class="card__content">
-                <h2 class="card__title">
-                  A very long bridge, over the forest and it is very long also
-                </h2>
-                <button type="button" class="card__like-btn"></button>
-              </div>
-            </li>
-            <li class="card">
-              <img
-                src="./images/5-photo-by-van-anh-nguyen-from-pexels.jpg"
-                alt="Morning tunnel"
-                class="card__img"
-              />
-              <div class="card__content">
-                <h2 class="card__title">Tunnel with morning light</h2>
-                <button type="button" class="card__like-btn"></button>
-              </div>
-            </li>
-            <li class="card">
-              <img
-                src="./images/6-photo-by-moritz-feldmann-from-pexels.jpg"
-                alt="Mountain house"
-                class="card__img"
-              />
-              <div class="card__content">
-                <h2 class="card__title">Mountain house</h2>
-                <button type="button" class="card__like-btn"></button>
-              </div>
-            </li>
+            <template id="card-template">
+              <li class="card">
+                <img src="" alt="" class="card__img" />
+                <div class="card__content">
+                  <h2 class="card__title"></h2>
+                  <button type="button" class="card__like-btn"></button>
+                </div>
+              </li>
+            </template>
           </ul>
         </section>
       </main>
@@ -133,20 +71,20 @@
           <button type="submit" class="modal__cls-btn"></button>
           <h2 class="modal__title">Edit profile</h2>
           <form name="edit-profile" class="modal__form">
-            <label for="name" class="modal__label">
+            <label for="modal-name" class="modal__label">
               Name
               <input
                 type="text"
-                id="name"
+                id="modal-name"
                 class="modal__input"
                 placeholder="Type your name"
               />
             </label>
-            <label for="description" class="modal__label">
+            <label for="modal-description" class="modal__label">
               Description
               <input
                 type="text"
-                id="description"
+                id="modal-description"
                 class="modal__input"
                 placeholder="Describe yourself"
               />
