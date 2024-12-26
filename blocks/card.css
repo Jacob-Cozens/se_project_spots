@@ -11,6 +11,10 @@
   display: block;
 }
 
+.card__img:hover {
+  cursor: pointer;
+}
+
 .card__content {
   display: flex;
   align-items: center;
