@@ -63,33 +63,6 @@
       <footer class="footer">
         <p class="footer__text">2023 &#169; Spots</p>
       </footer>
-      <div class="modal" id="edit-modal">
-        <div class="modal__container">
-          <button type="button" class="modal__cls-btn"></button>
-          <h2 class="modal__title">Edit profile</h2>
-          <form name="edit-profile" class="modal__form">
-            <label for="modal-name" class="modal__label">
-              Name
-              <input
-                type="text"
-                id="modal-name"
-                class="modal__input"
-                placeholder="Type your name"
-              />
-            </label>
-            <label for="modal-description" class="modal__label">
-              Description
-              <input
-                type="text"
-                id="modal-description"
-                class="modal__input"
-                placeholder="Describe yourself"
-              />
-            </label>
-            <button type="submit" class="modal__sub-btn">Save</button>
-          </form>
-        </div>
-      </div>
     </div>
     <div class="modal" id="edit-modal">
       <div class="modal__container">
@@ -147,7 +120,10 @@
     </div>
     <div class="modal" id="preview-modal">
       <div class="modal__content modal__content_type_preview">
-        <button type="button" class="modal__cls-btn modal__cls-btn_type_preview"></button>
+        <button
+          type="button"
+          class="modal__cls-btn modal__cls-btn_type_preview"
+        ></button>
         <img class="modal__img" src="#" alt="" />
         <p class="modal__caption"></p>
       </div>
