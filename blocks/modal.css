@@ -99,6 +99,12 @@
   color: #212121;
 }
 
+.modal__error {
+  color: #FF0000;
+  opacity: 70%;
+  font-weight: 500;
+}
+
 .modal__cls-btn {
   position: absolute;
   top: 32px;
