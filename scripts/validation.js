@@ -1,8 +1,15 @@
 const showInputError = (formEl, inputEl, errorMsg) => {
   const errorMsgID = inputEl.id + "-error";
-  const errorMsgEl = document.querySelector("#" + errorMsgID);
+  const errorMsgEl = formEl.querySelector("#" + errorMsgID);
   errorMsgEl.textContent = errorMsg;
-  console.log(errorMsgID);
+  inputEl.classList.add("modal__input_state_error");
+}
+
+const hideInputError = (formEl, inputEl) => {
+  const errorMsgID = inputEl.id + "-error";
+  const errorMsgEl = formEl.querySelector("#" + errorMsgID);
+  errorMsgEl.textContent = "";
+  inputEl.classList.remove("modal__input_state_error");
 }
 
 const checkInputValidity = (formEl, inputEl) => {

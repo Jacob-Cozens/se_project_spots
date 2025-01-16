@@ -99,6 +99,14 @@
   color: #212121;
 }
 
+.modal__input:hover {
+  border: 1px solid rgb(33, 33, 33);
+}
+
+.modal__input_state_error {
+  border: 1px solid rgba(255, 0, 0, 0.6);
+} 
+
 .modal__error {
   color: #FF0000;
   opacity: 70%;
