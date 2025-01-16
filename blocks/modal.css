@@ -105,10 +105,10 @@
 
 .modal__input_state_error {
   border: 1px solid rgba(255, 0, 0, 0.6);
-} 
+}
 
 .modal__error {
-  color: #FF0000;
+  color: #ff0000;
   opacity: 70%;
   font-weight: 500;
 }
@@ -152,13 +152,16 @@
   transition: opacity 1s ease;
 }
 
+.modal__sub-btn_disabled {
+  opacity: 50%;
+}
+
 .modal__sub-btn:hover {
   cursor: pointer;
   opacity: 80%;
 }
 
 @media screen and (max-width: 627px) {
-
   .modal {
     padding: 0 16px;
     background-color: rgb(0, 0, 0, 0.8);
