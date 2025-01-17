@@ -96,6 +96,14 @@ function getCardElement(data) {
   return cardElement;
 }
 
+function openModal(modal) {
+  modal.classList.add("modal_opened");
+}
+
+function closeModal(modal) {
+  modal.classList.remove("modal_opened");
+}
+
 function handleEditFormSubmit(evt) {
   evt.preventDefault();
   profileName.textContent = profileModalNameInput.value;
@@ -149,7 +157,7 @@ function handleEscape(evt) {
 }
 
 function handleOverlayClick(evt) {
-  if (!evt.target.closest(".modal__content")) {
+  if (evt.target === evt.currentTarget) {
     const openModal = document.querySelector(".modal.modal_opened");
     if (openModal) closeModal(openModal);
   }
@@ -157,31 +165,8 @@ function handleOverlayClick(evt) {
 
 function openModal(modal) {
   modal.classList.add("modal_opened");
-  function handleEscape(evt) {
-    if (evt.key === "Escape") {
-      const openModal = document.querySelector(".modal.modal_opened");
-      if (openModal) closeModal(openModal);
-    }
-  }
-
-  function handleOverlayClick(evt) {
-    if (!evt.target.closest(".modal__content")) {
-      const openModal = document.querySelector(".modal.modal_opened");
-      if (openModal) closeModal(openModal);
-    }
-  }
-
-  function openModal(modal) {
-    modal.classList.add("modal_opened");
-    document.addEventListener("keydown", handleEscape);
-    modal.addEventListener("click", handleOverlayClick);
-  }
-
-  function closeModal(modal) {
-    modal.classList.remove("modal_opened");
-    document.removeEventListener("keydown", handleEscape);
-    modal.removeEventListener("click", handleOverlayClick);
-  }
+  document.addEventListener("keydown", handleEscape);
+  modal.addEventListener("click", handleOverlayClick);
 }
 
 function closeModal(modal) {
