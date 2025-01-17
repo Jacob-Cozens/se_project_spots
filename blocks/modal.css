@@ -61,7 +61,7 @@
   background-color: #212121;
   border-radius: 8px;
   padding: 4px 8px;
-  margin: 8px 0 0 0;
+  margin: 8px 0 0 14px;
   color: #fff;
   display: inline-block;
   font-family: Poppins, "Helvetica Neue", Helvetica, Arial;
@@ -127,9 +127,13 @@
 
 .modal__cls-btn_type_preview {
   background-image: url(../images/close-icon2.png);
-  top: 0;
-  right: -52.5px;
+  background-color: transparent;
+  width: 40px;
+  height: 40px;
+  top: -10px;
+  right: 0;
   opacity: 1;
+  position: absolute;
 }
 
 .modal__cls-btn_type_preview:hover {
