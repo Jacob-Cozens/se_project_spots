@@ -157,7 +157,7 @@ function handleEscape(evt) {
 }
 
 function handleOverlayClick(evt) {
-  if (!evt.target.closest(".modal__container")) {
+  if (!evt.target.closest(".modal__container") && !evt.target.closest(".modal__img")) {
     const openModal = document.querySelector(".modal.modal_opened");
     if (openModal) closeModal(openModal);
   }
