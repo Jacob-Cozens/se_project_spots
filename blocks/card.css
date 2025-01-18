@@ -22,6 +22,12 @@
   margin: 12px 0px 36px;
 }
 
+.card__text {
+  display: none;  
+  font-size: 24px;
+  margin-top: 20px;
+}
+
 .card__like-btn {
   margin: 0;
   background-image: url(../images/like-icon.svg);
