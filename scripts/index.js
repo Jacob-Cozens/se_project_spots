@@ -120,8 +120,7 @@ profileEditButton.addEventListener("click", () => {
     profileFormElement,
     [profileModalNameInput, profileModalDescriptionInput],
     {
-      inputErrorClass: "modal__input_type_error",
-      errorClass: "modal__error",
+      settings,
     }
   );
   openModal(profileModal);
@@ -157,10 +156,10 @@ function handleEscape(evt) {
 }
 
 function handleOverlayClick(evt) {
-  if (!evt.target.closest(".modal__container") && !evt.target.closest(".modal__img")) {
-    const openModal = document.querySelector(".modal.modal_opened");
-    if (openModal) closeModal(openModal);
+  if (evt.target === evt.currentTarget) {
+    closeModal(evt.currentTarget);
   }
+  if (openModal) closeModal(openModal);
 }
 
 function openModal(modal) {
