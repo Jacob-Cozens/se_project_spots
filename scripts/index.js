@@ -119,9 +119,7 @@ profileEditButton.addEventListener("click", () => {
   resetValidation(
     profileFormElement,
     [profileModalNameInput, profileModalDescriptionInput],
-    {
-      settings,
-    }
+    settings
   );
   openModal(profileModal);
 });
@@ -159,7 +157,6 @@ function handleOverlayClick(evt) {
   if (evt.target === evt.currentTarget) {
     closeModal(evt.currentTarget);
   }
-  if (openModal) closeModal(openModal);
 }
 
 function openModal(modal) {
