@@ -1,3 +1,5 @@
+import { enableValidation, settings, disableButton, resetValidation } from "./validation.js";
+
 const initialCards = [
   {
     name: "Val Thorens",
@@ -173,3 +175,5 @@ function closeModal(modal) {
   document.removeEventListener("keydown", handleEscape);
   modal.removeEventListener("click", handleOverlayClick);
 }
+
+enableValidation(settings);
