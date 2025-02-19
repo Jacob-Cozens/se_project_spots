@@ -1,4 +1,10 @@
-import { enableValidation, settings, disableButton, resetValidation } from "../scripts/validation.js";
+import "./index.css";
+import {
+  enableValidation,
+  settings,
+  disableButton,
+  resetValidation,
+} from "../scripts/validation.js";
 
 const initialCards = [
   {
