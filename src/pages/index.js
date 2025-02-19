@@ -1,4 +1,4 @@
-import { enableValidation, settings, disableButton, resetValidation } from "./validation.js";
+import { enableValidation, settings, disableButton, resetValidation } from "../scripts/validation.js";
 
 const initialCards = [
   {
@@ -121,9 +121,7 @@ profileEditButton.addEventListener("click", () => {
   resetValidation(
     profileFormElement,
     [profileModalNameInput, profileModalDescriptionInput],
-    {
-      settings,
-    }
+    settings
   );
   openModal(profileModal);
 });
@@ -161,7 +159,6 @@ function handleOverlayClick(evt) {
   if (evt.target === evt.currentTarget) {
     closeModal(evt.currentTarget);
   }
-  if (openModal) closeModal(openModal);
 }
 
 function openModal(modal) {
