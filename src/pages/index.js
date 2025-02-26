@@ -5,7 +5,7 @@ import {
   disableButton,
   resetValidation,
 } from "../scripts/validation.js";
-import Api from "../scripts/Api.js";
+import Api from "../utils/Api.js";
 
 const initialCards = [
   {
@@ -49,8 +49,9 @@ const api = new Api({
 });
 
 api
-  .getInitialCards()
-  .then((cards) => {
+  .getAppInfo()
+  .then(([cards]) => {
+    console.log(cards);
     cards.forEach((item) => {
       const cardEl = getCardElement(item);
       cardsList.append(cardEl);
