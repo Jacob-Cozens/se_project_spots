@@ -1,5 +1,3 @@
-// utils/Api.js
-
 class Api {
   constructor({ baseUrl, headers }) {
     this._baseUrl = baseUrl;
@@ -7,7 +5,7 @@ class Api {
   }
 
   getAppInfo() {
-    return Promise.all([this.getInitialCards()]);
+    return Promise.all([this.getInitialCards(), this.getUserInfo()]);
   }
 
   getInitialCards() {
@@ -21,7 +19,11 @@ class Api {
     });
   }
 
-  // other methods for working with the API
+  getUserInfo() {
+    return fetch(`${this._baseUrl}/users/me`, {
+      headers: this._headers,
+    });
+  }
 }
 
 export default Api;

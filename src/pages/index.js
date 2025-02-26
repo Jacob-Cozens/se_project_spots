@@ -50,12 +50,14 @@ const api = new Api({
 
 api
   .getAppInfo()
-  .then(([cards]) => {
+  .then(([cards, userInfo]) => {
     console.log(cards);
     cards.forEach((item) => {
       const cardEl = getCardElement(item);
       cardsList.append(cardEl);
     });
+    profileName.textContent = userInfo.name;
+    profileDescription.textContent = userInfo.about;
   })
   .catch(console.error);
 
