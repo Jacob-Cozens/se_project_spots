@@ -5,6 +5,7 @@ import {
   disableButton,
   resetValidation,
 } from "../scripts/validation.js";
+import Api from "../scripts/Api.js";
 
 const initialCards = [
   {
@@ -38,6 +39,21 @@ const initialCards = [
 ];
 
 console.log(initialCards);
+
+const api = new Api({
+  baseUrl: "https://around-api.en.tripleten-services.com/v1",
+  headers: {
+    authorization: "32e5f08d-2c59-48ea-9639-c3858b959a65",
+    "Content-Type": "application/json",
+  },
+});
+
+api.getInitialCards().then((cards) => {
+  cards.forEach((item) => {
+    const cardEl = getCardElement(item);
+    cardsList.append(cardEl);
+  });
+});
 
 const profileEditButton = document.querySelector(".profile__edit-btn");
 const cardModalButton = document.querySelector(".profile__add-btn");
@@ -148,11 +164,6 @@ modalCloseTypePreview.addEventListener("click", () => closeModal(previewModal));
 
 profileFormElement.addEventListener("submit", handleEditFormSubmit);
 cardForm.addEventListener("submit", handleAddCardSubmit);
-
-initialCards.forEach((item) => {
-  const cardEl = getCardElement(item);
-  cardsList.append(cardEl);
-});
 
 function handleEscape(evt) {
   if (evt.key === "Escape") {
