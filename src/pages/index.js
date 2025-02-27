@@ -58,6 +58,7 @@ api
     });
     profileName.textContent = userInfo.name;
     profileDescription.textContent = userInfo.about;
+    profileImage.src = userInfo.avatar;
   })
   .catch(console.error);
 
@@ -65,6 +66,7 @@ const profileEditButton = document.querySelector(".profile__edit-btn");
 const cardModalButton = document.querySelector(".profile__add-btn");
 const profileName = document.querySelector(".profile__name");
 const profileDescription = document.querySelector(".profile__description");
+const profileImage = document.querySelector(".profile__avatar");
 
 const profileModal = document.querySelector("#edit-modal");
 const profileFormElement = profileModal.querySelector(".modal__form");
@@ -128,6 +130,13 @@ function getCardElement(data) {
 
 function handleEditFormSubmit(evt) {
   evt.preventDefault();
+  api
+    .editUserInfo({
+      name: profileModalNameInput.value,
+      about: profileModalDescriptionInput.value,
+    })
+    .then((data) => {})
+    .catch(console.error);
   profileName.textContent = profileModalNameInput.value;
   profileDescription.textContent = profileModalDescriptionInput.value;
   closeModal(profileModal);
