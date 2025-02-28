@@ -97,9 +97,13 @@ const deleteFormElement = document.forms["delete-form"];
 const cancelModalButton = document.querySelector(".modal__cancel-btn");
 const deleteModalButton = document.querySelector(".modal__delete-btn");
 const deleteCloseButton = deleteModal.querySelector(".modal__cls-btn");
+const deleteForm = deleteModal.querySelector(".modal__form");
 
 const cardTemplate = document.querySelector("#card-template");
 const cardsList = document.querySelector(".cards__list");
+
+let selectedCard;
+let selectedCardId;
 
 function getCardElement(data) {
   const cardElement = cardTemplate.content
@@ -111,19 +115,19 @@ function getCardElement(data) {
   const cardLikeBtn = cardElement.querySelector(".card__like-btn");
   const cardDeleteBtn = cardElement.querySelector(".card__delete-btn");
 
-
   cardNameElement.textContent = data.name;
   cardImageElement.src = data.link;
   cardImageElement.alt = data.name;
 
-
-  function handleDeleteCard() {
-    cardDeleteBtn.addEventListener("click", () => {
-      openModal(deleteModal);
-    })
+  function handleDeleteCard(cardElement, cardId) {
+    selectedCard = cardElement;
+    selectedCardId = cardId;
+    openModal(deleteModal);
   }
 
-  cardDeleteBtn.addEventListener("click", handleDeleteCard);
+  cardDeleteBtn.addEventListener("click", (evt) =>
+    handleDeleteCard(cardElement, data._id)
+  );
 
   cardLikeBtn.addEventListener("click", () => {
     cardLikeBtn.classList.toggle("card__like-btn_liked");
@@ -151,6 +155,17 @@ function handleEditFormSubmit(evt) {
   profileName.textContent = profileModalNameInput.value;
   profileDescription.textContent = profileModalDescriptionInput.value;
   closeModal(profileModal);
+}
+
+function handleDeleteSubmit(evt) {
+  evt.preventDefault();
+  api
+    .deleteCard(selectedCardId)
+    .then(() => {
+      selectedCard.remove();
+      closeModal(deleteModal);
+    })
+    .catch(console.error);
 }
 
 function handleAvatarSubmit(evt) {
@@ -208,12 +223,13 @@ cardprofileCloseButton.addEventListener("click", () => {
 
 cancelModalButton.addEventListener("click", () => {
   closeModal(deleteModal);
-})
+});
 
 deleteCloseButton.addEventListener("click", () => {
   closeModal(deleteModal);
-})
+});
 
+deleteForm.addEventListener("submit", handleDeleteSubmit);
 
 modalCloseTypePreview.addEventListener("click", () => closeModal(previewModal));
 
