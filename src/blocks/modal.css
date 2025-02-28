@@ -78,7 +78,7 @@
 }
 
 .modal__title-delete {
-  margin: 0 auto;
+  margin: 0 0 32px 50px;
   font-size: 24px;
   line-height: 1;
 }
@@ -188,6 +188,18 @@
   border: none;
   color: #212121;
   border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1;
+  width: 156px;
+  height: 52px;
+  transition: background-color 1s ease;
+}
+
+.modal__delete-btn:hover {
+  cursor: pointer;
+  opacity: 100%;
+  background-color: #ff3333;
 }
 
 .modal__cancel-btn {
@@ -195,6 +207,12 @@
   border: 1px solid #212121;
   color: #212121;
   border-radius: 8px;
+  transition: background-color 1s ease;
+}
+
+.modal__cancel-btn:hover {
+  background-color: #212121;
+  color: white;
 }
 
 .modal__error {

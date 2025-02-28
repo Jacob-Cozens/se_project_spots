@@ -95,6 +95,8 @@ const modalCloseTypePreview = previewModal.querySelector(".modal__cls-btn");
 const deleteModal = document.querySelector("#delete-modal");
 const deleteFormElement = document.forms["delete-form"];
 const cancelModalButton = document.querySelector(".modal__cancel-btn");
+const deleteModalButton = document.querySelector(".modal__delete-btn");
+const deleteCloseButton = deleteModal.querySelector(".modal__cls-btn");
 
 const cardTemplate = document.querySelector("#card-template");
 const cardsList = document.querySelector(".cards__list");
@@ -109,13 +111,16 @@ function getCardElement(data) {
   const cardLikeBtn = cardElement.querySelector(".card__like-btn");
   const cardDeleteBtn = cardElement.querySelector(".card__delete-btn");
 
+
   cardNameElement.textContent = data.name;
   cardImageElement.src = data.link;
   cardImageElement.alt = data.name;
 
 
-  function handleDeleteCard(evt) {
-    evt.target.closest(".card").remove();
+  function handleDeleteCard() {
+    cardDeleteBtn.addEventListener("click", () => {
+      openModal(deleteModal);
+    })
   }
 
   cardDeleteBtn.addEventListener("click", handleDeleteCard);
@@ -200,6 +205,15 @@ avatarCloseButton.addEventListener("click", () => {
 cardprofileCloseButton.addEventListener("click", () => {
   closeModal(cardModal);
 });
+
+cancelModalButton.addEventListener("click", () => {
+  closeModal(deleteModal);
+})
+
+deleteCloseButton.addEventListener("click", () => {
+  closeModal(deleteModal);
+})
+
 
 modalCloseTypePreview.addEventListener("click", () => closeModal(previewModal));
 
