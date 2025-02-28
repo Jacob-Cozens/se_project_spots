@@ -62,12 +62,17 @@ api
   })
   .catch(console.error);
 
+const avatarModalButton = document.querySelector(".profile__avatar-btn");
+const avatarModal = document.querySelector("#avatar-modal");
+const avatarFormElement = document.forms["avatar-form"];
+const avatarLinkInput = avatarModal.querySelector("#profile-avatar-input");
+const avatarCloseButton = avatarModal.querySelector(".modal__cls-btn");
+
 const profileEditButton = document.querySelector(".profile__edit-btn");
 const cardModalButton = document.querySelector(".profile__add-btn");
 const profileName = document.querySelector(".profile__name");
 const profileDescription = document.querySelector(".profile__description");
 const profileImage = document.querySelector(".profile__avatar");
-
 const profileModal = document.querySelector("#edit-modal");
 const profileFormElement = profileModal.querySelector(".modal__form");
 const profileCloseButton = profileModal.querySelector(".modal__cls-btn");
@@ -170,6 +175,14 @@ profileCloseButton.addEventListener("click", () => {
 cardModalButton.addEventListener("click", () => {
   openModal(cardModal);
 });
+
+avatarModalButton.addEventListener("click", () => {
+  openModal(avatarModal);
+});
+
+avatarCloseButton.addEventListener("click", () => {
+  closeModal(avatarModal);
+})
 
 cardprofileCloseButton.addEventListener("click", () => {
   closeModal(cardModal);
