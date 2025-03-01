@@ -93,7 +93,6 @@ const previewModalCapEl = previewModal.querySelector(".modal__caption");
 const modalCloseTypePreview = previewModal.querySelector(".modal__cls-btn");
 
 const deleteModal = document.querySelector("#delete-modal");
-const deleteFormElement = document.forms["delete-form"];
 const cancelModalButton = document.querySelector(".modal__cancel-btn");
 const deleteModalButton = document.querySelector(".modal__delete-btn");
 const deleteCloseButton = deleteModal.querySelector(".modal__cls-btn");
@@ -125,13 +124,15 @@ function getCardElement(data) {
     openModal(deleteModal);
   }
 
+  function handleLike() {
+    cardLikeBtn.classList.toggle("card__like-btn_liked");
+  }
+
   cardDeleteBtn.addEventListener("click", (evt) =>
     handleDeleteCard(cardElement, data._id)
   );
 
-  cardLikeBtn.addEventListener("click", () => {
-    cardLikeBtn.classList.toggle("card__like-btn_liked");
-  });
+  cardLikeBtn.addEventListener("click", handleLike);
 
   cardImageElement.addEventListener("click", () => {
     openModal(previewModal);
@@ -157,6 +158,16 @@ function handleEditFormSubmit(evt) {
   closeModal(profileModal);
 }
 
+function handleAddCardSubmit(evt) {
+  evt.preventDefault();
+  const inputValues = { name: cardNameInput.value, link: cardLinkInput.value };
+  const cardEl = getCardElement(inputValues);
+  cardsList.prepend(cardEl);
+  evt.target.reset();
+  disableButton(cardSubmitBtn, settings);
+  closeModal(cardModal);
+}
+
 function handleDeleteSubmit(evt) {
   evt.preventDefault();
   api
@@ -178,16 +189,6 @@ function handleAvatarSubmit(evt) {
     .catch(console.error);
   profileImage.src = avatarLinkInput.value;
   closeModal(avatarModal);
-}
-
-function handleAddCardSubmit(evt) {
-  evt.preventDefault();
-  const inputValues = { name: cardNameInput.value, link: cardLinkInput.value };
-  const cardEl = getCardElement(inputValues);
-  cardsList.prepend(cardEl);
-  evt.target.reset();
-  disableButton(cardSubmitBtn, settings);
-  closeModal(cardModal);
 }
 
 profileEditButton.addEventListener("click", () => {
