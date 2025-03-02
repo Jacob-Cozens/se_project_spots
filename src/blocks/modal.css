@@ -280,6 +280,11 @@
     width: 100%;
   }
 
+  .modal__sub-btn-delete {
+    width: 156px;
+    height: 52px;
+  }
+
   .modal__cls-btn {
     top: 12px;
     right: 12px;
