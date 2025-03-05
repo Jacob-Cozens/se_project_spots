@@ -12,8 +12,10 @@ This Project is called "Spots". In this project, I've created the layout of a mo
 - Flexbox
 - Grid
 - Responsive Design
+- Javascript
+- APIs
 
-  Using a combination of Grid and Flexbox, I was able to easily set up the website in a way that uses responsive design, ensuring that the website renders well on all screen sizes and resolutions.
+  Using a combination of Grid and Flexbox, I was able to easily set up the website in a way that uses responsive design, ensuring that the website renders well on all screen sizes and resolutions. Using Javascript and APIs, the website is now fully functional! You can add or remove your own pictures and text, and your edits will persist even after you leave the webpage.
 
 **Images**
 
@@ -31,6 +33,4 @@ This Project is called "Spots". In this project, I've created the layout of a mo
 
 **Deployment**
 
-[Link to Project](https://jacob-cozens.github.io/se_project_spots/)
-
-[Link to Video](https://drive.google.com/file/d/1qRTy4-twScCvlM43ooH-ua0WPcFcu6sb/view?usp=sharing)
+[Link to Video](https://www.youtube.com/watch?v=VY_pLP_05BI)
